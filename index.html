@@ -24,9 +24,9 @@
             try {
                 const response = await fetch('https://shl-server.onrender.com/health'); // Replace with your health check API URL
                 if (response.ok) {
-                    const data = await response.text();
+                    const data = await response.json();
                     console.log(data);
-                    document.getElementById('status').textContent = `Status: ${data}`; // Adjust based on your API's response
+                    document.getElementById('status').textContent = `Status: ${data.status}`; // Adjust based on your API's response
                 } else {
                     document.getElementById('status').textContent = 'Status: API is down!';
                 }
